@@ -8,6 +8,6 @@ import an.awesome.pipelinr.Command;
 class WaveBack implements Command.Handler<Wave, String> {
     @Override
     public String handle(Wave command) {
-        return null;
+        return "waved back!";
     }
 }
