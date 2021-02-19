@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 
 import an.awesome.pipelinr.Pipeline;
 
+import foobar.queries.addtwonumbers.AddTwoNumbersQuery;
+
 @SpringBootApplication
 public class App {
     @Autowired
@@ -21,8 +23,8 @@ public class App {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
-            String response = new Wave().execute(pipeline);
-            System.out.println(response); 
+            Integer result = pipeline.send(new AddTwoNumbersQuery(4, 2));
+            System.out.println("The result is " + result); 
 		};
 	}
 }
